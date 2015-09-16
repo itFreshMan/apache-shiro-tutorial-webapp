@@ -27,27 +27,28 @@
 
     <properties>
         <shiro.version>1.2.2</shiro.version>
+        <jetty.version>8.1.10.v20130312</jetty.version>
     </properties>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.1.0.v20131115</version>
-                <configuration>
-                    <webApp>
-                        <contextPath>/</contextPath>
-                    </webApp>
-                    <connectors>
-                    	<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+					<webAppConfig>
+						<contextPath>/</contextPath>
+					</webAppConfig>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 							<port>8081</port>
 							<maxIdleTime>60000</maxIdleTime>
 							<reuseAddress>false</reuseAddress>
 						</connector>
-                    </connectors>
-                </configuration>
-            </plugin>
+					</connectors>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 
