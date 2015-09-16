@@ -39,6 +39,13 @@
                     <webApp>
                         <contextPath>/</contextPath>
                     </webApp>
+                    <connectors>
+                    	<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>8081</port>
+							<maxIdleTime>60000</maxIdleTime>
+							<reuseAddress>false</reuseAddress>
+						</connector>
+                    </connectors>
                 </configuration>
             </plugin>
         </plugins>
